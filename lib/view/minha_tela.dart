@@ -34,7 +34,7 @@ class minha_tela extends StatelessWidget {
               const Text("Go to Checkout", style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold, fontSize: 20)),
               Container(
                 margin: const EdgeInsets.only(left: 20),
-                child: const Text("\$9,0", style: TextStyle(color: Colors.white,fontSize: 25, backgroundColor: Color.fromRGBO(0, 0, 0, 950),height: 1.5),))
+                child: const Text("\$9,0", style: TextStyle(color: Colors.white,fontSize: 25,height: 1.5),))
               ],
           ),
         ),

@@ -43,14 +43,18 @@ class card_cart extends StatelessWidget {
                       children: [
                         Container(
                           margin: const EdgeInsets.only(right: 10),
-                          child: Icon(Icons.remove, size: 40,)),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(width: 1, color: const Color.fromARGB(79, 0, 0, 0)),
+                              borderRadius: BorderRadius.circular(15)),
+                            child: Icon(Icons.remove, size: 40,))),
                         const Text("1", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
                         Container(
                           margin: const EdgeInsets.only(left: 10),
                           child: Container(
                             decoration: BoxDecoration(
-                              border: Border.all(width: 1),
-                              borderRadius: BorderRadius.circular(20)),
+                              border: Border.all(width: 1, color: const Color.fromARGB(79, 0, 0, 0)),
+                              borderRadius: BorderRadius.circular(15)),
                             child: const Icon(Icons.add, size: 40,color: Colors.green,)))
                       ],
                     )
