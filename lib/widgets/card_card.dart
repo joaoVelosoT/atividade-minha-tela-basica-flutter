@@ -1,9 +1,22 @@
 // ignore: camel_case_types
 import 'package:flutter/material.dart';
+import 'package:minha_tela_basica/models/compras_model.dart';
 
 class card_cart extends StatelessWidget {
+
+/*
+imagem - String
+titulo - String
+medida - String
+quantidade - int
+preco - double
+*/
+
+
+final ComprasModel compra;
   const card_cart({
     super.key,
+    required this.compra,
   });
 
   @override
@@ -19,22 +32,26 @@ class card_cart extends StatelessWidget {
         children: [
           Row(
             children: [
-              Column(children: [Image.asset("assets/images/banana.png")]),
+              Column(children: [
+                // "assets/images/banana.png"
+                Image.asset(compra.imagem)
+                ]
+                ),
               Container(
                 margin: const EdgeInsets.only(left: 40),
                 child: Column(
                   children: [
-                    const Column(
+                    Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Text(
-                          "Organic Banana",
-                          style: TextStyle(
+                         Text(
+                          compra.titulo,
+                          style: const TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          "1kg, Price",
+                          compra.medida
                         
                         ),
                       ],
@@ -63,13 +80,13 @@ class card_cart extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(
+           SizedBox(
             // color: Colors.red,
             
             height: 90,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [Icon(Icons.close, size: 30,), Text("\$4.99",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)],
+              children: [const Icon(Icons.close,size: 30,),Text('\$ ${compra.preco}'  ,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)],
             ),
           )
         ],

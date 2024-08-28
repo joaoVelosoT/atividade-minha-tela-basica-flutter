@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:minha_tela_basica/models/compras_model.dart';
 import 'package:minha_tela_basica/widgets/card_card.dart';
 
 class minha_tela extends StatelessWidget {
@@ -6,20 +7,29 @@ class minha_tela extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    ComprasModel minhaCompra = ComprasModel(
+  imagem: "assets/images/banana.png",
+  medida: "1kg, Price",
+  preco: 4.99,
+  quantidade: 1,
+  titulo: "Organic Banana"
+);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("My Cart",
             style: TextStyle(fontWeight: FontWeight.bold)),
         centerTitle: true,
       ),
-      body: const Column(
+      body:  Column(
         children: [
-          card_cart(),
-          card_cart(),
-          card_cart(),
-          card_cart(),
-          card_cart(),
-          card_cart(),
+          card_cart(compra: minhaCompra),
+          // card_cart(),
+          // card_cart(),
+          // card_cart(),
+          // card_cart(),
+          // card_cart(),
         ],
       ),
       bottomNavigationBar: BottomAppBar(
